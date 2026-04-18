@@ -327,6 +327,14 @@ img { max-width: 100%; display: block; }
     color: #fff;
     font-family: var(--font-mono);
     z-index: 1;
+    overflow: hidden;
+}
+#eumesmo {
+    width: 100px;   
+    height: 100px;      
+    border-radius: 50%; 
+    object-fit: cover;
+    display: block;
 }
 
 .profile-stats {
