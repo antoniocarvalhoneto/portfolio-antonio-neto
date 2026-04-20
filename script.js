@@ -1,3 +1,4 @@
+
 // ===== NAVBAR SCROLL =====
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
@@ -23,6 +24,18 @@ navLinks.querySelectorAll('a').forEach(a => {
         spans[0].style.transform = spans[2].style.transform = '';
         spans[1].style.opacity = '';
     });
+});
+
+const botaomusica = document.getElementById('navMusic');
+const musica = new Audio("assets/What You Won't Do for Love.mp3");
+botaomusica.addEventListener('click', () => {
+    if (musica.paused) {
+        musica.play();
+        botaomusica.textContent = 'Pausar música';
+    } else {
+        musica.pause();
+        botaomusica.textContent = 'Toque um jazz suave🎶';
+    }
 });
 
 // ===== INTERSECTION OBSERVER: REVEAL =====
