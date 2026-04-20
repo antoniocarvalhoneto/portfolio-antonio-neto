@@ -26,7 +26,10 @@
         <button class="nav-toggle" id="navToggle" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
-        <button class = "nav-music" id="navMusic" aria-label="Tocar música">Toque um jazz suave🎶</button>
+        <button class="nav-music" id="navMusic" aria-label="Abrir player">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            Player
+        </button>
     </nav>
 
     <!-- HERO -->
@@ -48,9 +51,9 @@
         </div>
         <div class="hero-visual">
             <div class="profile-card">
-                <div class="profile-avatar">
+                <div class="profile-avatar" id="openBio" title="Ver biografia" style="cursor:pointer">
                     <div class="avatar-ring"></div>
-                    <div class="avatar-initials"><img id="eumesmo" src="assets/minha foto(eu).jpeg" alt="Antonio Neto"></div>
+                    <div class="avatar-initials"><div class="avatar-bio-hint">ver bio</div><img id="eumesmo" src="assets/minha foto(eu).jpeg" alt="Antonio Neto"></div>
                 </div>
                 <div class="profile-stats">
                     <div class="stat">
@@ -283,6 +286,173 @@
             <p class="footer-sub">Ciência da Computação · Jovem Tech</p>
         </div>
     </footer>
+
+    <!-- MODAL BIOGRAFIA -->
+    <div class="bio-overlay" id="bioOverlay">
+        <div class="bio-modal" id="bioModal">
+            <button class="bio-close" id="bioClose" aria-label="Fechar">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="bio-header">
+                <div class="bio-avatar-wrap">
+                    <img src="assets/minha foto(eu).jpeg" alt="Antonio Neto" class="bio-avatar-img">
+                </div>
+                <div class="bio-header-info">
+                    <span class="bio-tag">Desenvolvedor</span>
+                    <h2 class="bio-name">Antonio Neto</h2>
+                    <p class="bio-role">Ciência da Computação · UNIT · Jovem Tech</p>
+                </div>
+            </div>
+            <div class="bio-divider"></div>
+            <div class="bio-body">
+                <div class="bio-section">
+                    <h3 class="bio-section-title"><span class="accent-red">01.</span> Quem sou</h3>
+                    <p class="bio-text">
+                        <!-- EDITE AQUI: Sua apresentação pessoal -->
+                        Olá! Me chamo Antonio Neto, tenho 18 anos e sou de Aracaju, Sergipe. Iniciei minha jornada na programação em outubro de 2025 e desde então venho estudando diariamente com muita determinação.
+                    </p>
+                </div>
+                <div class="bio-section">
+                    <h3 class="bio-section-title"><span class="accent-red">02.</span> Minha trajetória</h3>
+                    <p class="bio-text">
+                        <!-- EDITE AQUI: Sua história e trajetória -->
+                        Fui atleta de basquete de rendimento por vários anos, o que me ensinou disciplina, foco e resiliência. Quando descobri a programação, percebi que essas mesmas habilidades são fundamentais para se tornar um bom desenvolvedor.
+                    </p>
+                </div>
+                <div class="bio-section">
+                    <h3 class="bio-section-title"><span class="accent-red">03.</span> O que estou aprendendo</h3>
+                    <p class="bio-text">
+                        <!-- EDITE AQUI: Tecnologias e estudos atuais -->
+                        Atualmente estou me aperfeiçoando em Django e gerenciamento de banco de dados com PostgreSQL, além de aprofundar meu conhecimento em JavaScript. Falo inglês e busco constantemente me comunicar bem tecnicamente.
+                    </p>
+                </div>
+                <div class="bio-section">
+                    <h3 class="bio-section-title"><span class="accent-red">04.</span> Objetivo</h3>
+                    <p class="bio-text">
+                        <!-- EDITE AQUI: Seus objetivos e sonhos -->
+                        Meu objetivo é me tornar um desenvolvedor full stack completo, contribuir com projetos que gerem impacto real e continuar evoluindo todos os dias. Estou aberto a oportunidades, mentorias e colaborações.
+                    </p>
+                </div>
+            </div>
+            <div class="bio-footer-links">
+                <a href="https://www.linkedin.com/in/antonio-neto-328781396/" target="_blank" class="bio-link linkedin-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="https://github.com/antoniocarvalhoneto" target="_blank" class="bio-link github-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://instagram.com/antoniosfcn" target="_blank" class="bio-link instagram-link">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                    Instagram
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- PLAYER SPOTIFY-STYLE -->
+    <!-- Mini bar (fundo da tela) -->
+    <div class="player-bar" id="playerBar">
+        <div class="player-bar-left">
+            <div class="player-art" id="playerArt">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+            </div>
+            <div class="player-bar-info">
+                <span class="player-bar-title" id="playerBarTitle">Nenhuma música</span>
+                <span class="player-bar-artist" id="playerBarArtist">Selecione uma faixa</span>
+            </div>
+        </div>
+        <div class="player-bar-controls">
+            <button class="pbar-btn" id="pbarPrev" title="Anterior">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button class="pbar-btn pbar-play" id="pbarPlay" title="Play/Pause">
+                <svg id="pbarPlayIcon" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button class="pbar-btn" id="pbarNext" title="Próxima">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+        </div>
+        <div class="player-bar-right">
+            <div class="player-progress-wrap">
+                <span class="ptime" id="pCurrentTime">0:00</span>
+                <div class="player-progress" id="playerProgress">
+                    <div class="player-progress-fill" id="playerProgressFill"></div>
+                </div>
+                <span class="ptime" id="pDuration">0:00</span>
+            </div>
+            <div class="player-vol-wrap">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+                <input type="range" id="volSlider" min="0" max="100" value="70" step="1" class="vol-range">
+            </div>
+            <button class="pbar-btn pbar-expand" id="pbarExpand" title="Expandir player">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Sidebar player expandido -->
+    <div class="player-sidebar" id="playerSidebar">
+        <div class="sidebar-header">
+            <span class="sidebar-title">Antonio Neto Player</span>
+            <button class="sidebar-close" id="sidebarClose" title="Fechar">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+        </div>
+
+        <div class="sidebar-art-wrap">
+            <div class="sidebar-art-container">
+                <div class="sidebar-art" id="sidebarArt">
+                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="opacity:0.3"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/></svg>
+                </div>
+                <div class="sidebar-art-ring" id="sidebarArtRing"></div>
+            </div>
+        </div>
+
+        <div class="sidebar-track-info">
+            <p class="sidebar-track-name" id="sidebarTrackName">Selecione uma música</p>
+            <p class="sidebar-track-artist" id="sidebarTrackArtist">—</p>
+        </div>
+
+        <div class="sidebar-progress-wrap">
+            <div class="sidebar-progress" id="sidebarProgress">
+                <div class="sidebar-progress-fill" id="sidebarProgressFill"></div>
+            </div>
+            <div class="sidebar-times">
+                <span id="sCurrentTime">0:00</span>
+                <span id="sDuration">0:00</span>
+            </div>
+        </div>
+
+        <div class="sidebar-controls">
+            <button class="sc-btn" id="scShuffle" title="Aleatório">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"/></svg>
+            </button>
+            <button class="sc-btn" id="scPrev" title="Anterior">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+            </button>
+            <button class="sc-btn sc-play" id="scPlay" title="Play/Pause">
+                <svg id="scPlayIcon" width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <button class="sc-btn" id="scNext" title="Próxima">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+            </button>
+            <button class="sc-btn" id="scRepeat" title="Repetir">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"/></svg>
+            </button>
+        </div>
+
+        <div class="sidebar-volume">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.5 12c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM5 9v6h4l5 5V4L9 9H5zm11-4.06v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/></svg>
+            <input type="range" id="sidebarVol" min="0" max="100" value="70" step="1" class="sidebar-vol-range">
+            <span id="sidebarVolPct">70%</span>
+        </div>
+
+        <div class="sidebar-playlist" id="sidebarPlaylist">
+            <p class="playlist-label">Playlist</p>
+            <!-- faixas geradas por JS -->
+        </div>
 
     <script src="script.js"></script>
 </body>
