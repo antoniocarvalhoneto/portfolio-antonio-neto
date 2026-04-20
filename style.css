@@ -52,7 +52,6 @@ img { max-width: 100%; display: block; }
     border-bottom: 1px solid var(--border);
     transition: var(--transition);
 }
-
 .navbar.scrolled {
     padding: 0.6rem 2rem;
     background: rgba(8,12,16,0.97);
