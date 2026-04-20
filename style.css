@@ -924,6 +924,7 @@ img { max-width: 100%; display: block; }
 .social-card.linkedin:hover { border-color: #0a66c2; }
 .social-card.github:hover { border-color: #fff; }
 .social-card.instagram:hover { border-color: #e1306c; }
+.social-card.youtube:hover { border-color: #ff0000; }
 
 .social-icon {
     width: 50px; height: 50px;
@@ -937,6 +938,7 @@ img { max-width: 100%; display: block; }
 .linkedin .social-icon { background: rgba(10,102,194,0.15); color: #0a66c2; }
 .github .social-icon { background: rgba(255,255,255,0.08); color: var(--white); }
 .instagram .social-icon { background: rgba(225,48,108,0.1); color: #e1306c; }
+.youtube .social-icon { background: rgba(255,0,0,0.1); color: #ff0000; }
 
 .social-info {
     flex: 1;
